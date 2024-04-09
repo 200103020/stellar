@@ -274,11 +274,25 @@ progress::-moz-progress-bar {
     height: 25px;
 }
 
+.card-body {
+    flex-grow: 1;
+}
+
+.progression,
+.info-bussines {
+    flex-shrink: 0;
+}
+
 .card-text{
     line-height: 31px;
     color: #3B707D;
     font-size: 20px;
     margin-bottom: 40px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
 }
 
 .card-title {
@@ -402,46 +416,227 @@ progress::-moz-progress-bar {
     padding: 40px 0;
 }
 
-.review_items {
-    width: 1196px;
+.carousel-inner{
+    background: url('../img/reviewBack.png') 0 0 no-repeat;
+    text-align: center;
+    padding: 81px 20px 119px;
+    color: #23424A;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    border-radius: 60px; 
+    width: 182px;
     margin: 0 auto;
-    background-color: #65A9A6;
+    margin-bottom: 45px;
+    font-size: 20px;
 }
 
-.review_items p{
-    margin-bottom: 23px;
+.reviewText {
+    font-size: 20px;
+    width: 87%;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
 }
 
-.review_slider .slick-track {
+.carousel-control-prev{
+    background-color: #3D4451; 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 100%;
+    margin: auto 0 auto 75px;
+}
+
+.carousel-control-next{
+    background-color: #3D4451; 
+    width: 56px; 
+    height: 56px; 
+    border-radius: 100%;
+    margin: auto 75px auto 0;
+}
+
+.FAQ {
+    padding: 40px 0;
+}
+
+.contents {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.review_slider .slick-list {
-    overflow: hidden;
+.accordion{
+    width:  660px;;
 }
 
-.review_slider {
-    position: relative;
-    z-index: 0;
-}
-
-.slick-arrow {
-    position: absolute;
-    margin: -25px 0 0 0;
-    top: 20%;
-    font-size: 0;
-    width: 40px;
+.accordion .accordion_wrap .header-item{
+    width: 100%;
     height: 50px;
-    border: none;
+    background: #fff;
+    padding: 50px;
+    color: #343539;
+    font-weight: bold;
+    /* border-bottom: 2px solid #DEB522; */
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    border-top: 2px solid #E7EAEF;
 }
 
-.slick-arrow.slick-prev {
-    left: 0;
-    background: url('../img/left.svg') 0 0 no-repeat;
-    cursor: pointer;
+.accordion .accordion_wrap:first-child .header-item{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
-.slick-arrow.slick-next {
-    right: 0;
-    background: url('../img/right.svg') 0 0 no-repeat;
-    cursor: pointer;
+
+.accordion .accordion_wrap:last-child .header-item{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+.accordion .accordion_wrap .header-item:before,
+.accordion .accordion_wrap .header-item:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    width: 20px;
+    height: 2px;
+    background: #000;
+}
+
+.accordion .accordion_wrap .header-item:hover{
+    color: #343539;
+    transition: 0.5s ease;
+}
+
+.accordion .accordion_wrap .header-item:hover:before,
+.accordion .accordion_wrap .header-item:hover:after{
+    background: #000;
+}
+
+.accordion .accordion_wrap .header-item:after{
+    transform: rotate(-90deg);
+    transition: all 0.5s ease;
+}
+
+.accordion .accordion_wrap .text{
+    width: 100%;
+    height: 0px;
+    transition: all 0.5s ease;
+    background: #23424A;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.accordion .accordion_wrap .text p{
+    padding: 30px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.accordion .accordion_wrap .header-item.active{
+    color: #fff; 
+    font-size: 20px;
+    background-color: #23424A;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+}
+
+.accordion .accordion_wrap:last-child .header-item.active{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.accordion .accordion_wrap .header-item.active:before,
+.accordion .accordion_wrap .header-item.active:after{
+    background: #fff;
+}
+
+.accordion .accordion_wrap .header-item.active:after{
+    transform: rotate(0deg);
+}
+
+.accordion .accordion_wrap .header-item.active + .text{
+    height: 170px;
+    border-radius: 0 0 20px 20px;
+    padding-left: 19px;
+}
+
+.bot {
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.footer {
+    padding: 225px 0;
+    background: url('../img/footerBack.png') 0 0 no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.footerNav {
+    display: flex;
+    align-items: center;
+}
+
+.eachNav li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 70px;
+}
+
+.eachNav li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.eachNav li p{
+    font-size: 20px;
+    color: #fff;
+}
+
+.eachNav li img{
+    margin-right: 10px;
+}
+
+.eachNav {
+    display: flex;
+    align-items: center;
+}
+
+
+.logoFooter{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    margin-right: 25px;
+}
+
+.logoFooter img {
+    margin-right: 10px;
+}
+
+.logoFooter a{
+    display: block;
+    font-weight: bold;
+    width: 20%;
+    color: #fff;
+    font-size: 20px;
+}
+
+.year {
+    text-align: center; 
+    color: #fff; 
+    font-size: 20px;
+    position: absolute;
+    top: 92%;
+    bottom: 10%;
+    right: 35%;
+    left: 35%;
 }
